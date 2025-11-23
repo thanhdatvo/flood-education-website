@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+:root {
+	a {
+		text-decoration: underline;
+		color: blue;
+	}
+}
