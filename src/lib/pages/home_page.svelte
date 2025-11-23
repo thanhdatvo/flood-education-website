@@ -11,7 +11,7 @@
 >
 	<ul>
 		{#each items as item (item.slug)}
-			<li class={slug === item.slug ? 'active' : ''}>
+			<li class={{ active: slug === item.slug, 'hover:bg-white': true }}>
 				<span>
 					<a href={resolve(`/${item.slug}`)}>{item.label}</a>
 				</span>
@@ -29,7 +29,7 @@
 
 <style>
 	.box {
-		margin-bottom: 10px;
+		/* margin-bottom: 10px; */
 		padding: 40px;
 		border: 1px solid #dee2e6;
 		border-radius: 0 0 0.5rem 0.5rem;

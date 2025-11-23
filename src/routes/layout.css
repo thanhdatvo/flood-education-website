@@ -9,3 +9,34 @@
 	background-image: url(https://www.meetup.com/images/background-noise.webp);
 	font-family: 'Source Serif 4', serif;
 }
+
+body {
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background: linear-gradient(180deg, #07131c, #305472);
+}
+body:before,
+body:after {
+	content: 'CLICK & HOLD TO CREATE LIGHTNING';
+	font-family: Arial, Helvetica, serif;
+	font-size: 12px;
+	/* position: absolute; */
+	position: relative;
+	width: 100%;
+	text-align: center;
+	bottom: 18px;
+	color: #fff4;
+	z-index: -1;
+}
+body:before {
+	content: 'HOVER SCREEN TO CHANGE WIND SPEED';
+	top: 18px;
+}
+body:active:before,
+body:active:after {
+	color: #fff0;
+	transition: all 0.5s ease 0s;
+}
