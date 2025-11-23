@@ -6,15 +6,19 @@
 	let { slug } = $props();
 </script>
 
-<ul>
-	{#each items as item (item.slug)}
-		<li class={slug === item.slug ? 'active' : ''}>
-			<span>
-				<a href={resolve(`/${item.slug}`)}>{item.label}</a>
-			</span>
-		</li>
-	{/each}
-</ul>
+<nav
+	class=" top-0 left-0 right-0 px-6 py-4 bg-blue-50 backdrop-blur-sm text-white flex justify-between items-center"
+>
+	<ul>
+		{#each items as item (item.slug)}
+			<li class={slug === item.slug ? 'active' : ''}>
+				<span>
+					<a href={resolve(`/${item.slug}`)}>{item.label}</a>
+				</span>
+			</li>
+		{/each}
+	</ul>
+</nav>
 {#each items as item (item.slug)}
 	{#if slug == item.slug}
 		<div class="box">
@@ -38,7 +42,7 @@
 		padding-left: 0;
 		margin-bottom: 0;
 		list-style: none;
-		border-bottom: 1px solid #dee2e6;
+		/* border-bottom: 1px solid #dee2e6; */
 	}
 	li {
 		margin-bottom: -1px;
