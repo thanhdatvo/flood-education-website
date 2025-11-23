@@ -1,40 +1,54 @@
-7.1. Video – Infographic
+<script lang="ts">
+	import SectionTitle from '$lib/components/SectionTitle.svelte';
+	import VideoContentC from '$lib/components/VideoContent.svelte';
+	import type { VideoContent } from '$lib/models/video_content';
 
-<br />
-Nguyên nhân lũ lụt: https://www.youtube.com/watch?v=48rguAox-9M
+	const floodCauses: VideoContent = {
+		title: 'Tìm hiểu nguyên nhân lũ',
+		urls: ['https://www.youtube.com/embed/48rguAox-9M', 'https://www.youtube.com/embed/uRW8n8KKazs']
+	};
+</script>
 
-<br />
-https://www.youtube.com/watch?v=uRW8n8KKazs
+<SectionTitle title="Bài tập" />
 
-<br />
-Cách phòng tránh lũ quét https://www.youtube.com/watch?v=18_QtDaFzyA
-
-<br />
-https://www.youtube.com/watch?v=xqTjS75UHZc
-
-<br />
-Hậu quả lũ lụt https://www.youtube.com/watch?v=o_GlGDm0FAU
-
-<br />
-7.2. Câu chuyện thực tế
-
-<br />
-Bài học từ trận lũ lịch sử năm 2020 https://www.youtube.com/watch?v=Ls5-8ncvdWI
-
-<br />
-https://www.youtube.com/watch?v=Y9X3LR9Q9KA
-
-<br />
-Gương cứu hộ dũng cảm https://www.youtube.com/watch?v=y8eU1ISaRf4
-
-<br />
-https://www.youtube.com/watch?v=jEdbYUodjBc
-
-<br />
-https://www.youtube.com/watch?v=XgQ8Je70z-g
-
-<br />
-Những tấm lòng thiện nguyện https://www.youtube.com/watch?v=oX4N50evgtA
-
-<br />
-https://www.youtube.com/watch?v=qejVULlM7ko
+<ul class="list-disc pt-1 pl-4 font-normal [&>li]:mt-7">
+	<li>
+		<VideoContentC content={floodCauses} />
+	</li>
+	<li>
+		Phân tích thiệt hại tỉnh em: học sinh làm và nộp bài tập tại link
+		<div class="relative w-full pb-[96.25%] mt-4 ml-2">
+			<iframe
+				title=""
+				src="https://docs.google.com/forms/d/e/1FAIpQLSfAM6i5cNAYAc6VUYuVVtKG_kDS9kjmwTvqNyQRaay-e2XcBw/viewform?embedded=true"
+				class="absolute inset-0 w-full h-full rounded-xl"
+				allow="autoplay; encrypted-media"
+				allowfullscreen
+			></iframe>
+		</div>
+	</li>
+	<li>
+		Tạo poster tuyên truyền: học sinh thiết kế poster và gửi vào link
+		<div class="relative w-full pb-[96.25%] mt-4 ml-2">
+			<iframe
+				title=""
+				src="https://padlet.com/embed/vob269o0ikhmhubj"
+				class="absolute inset-0 w-full h-full rounded-xl"
+				allow="autoplay; encrypted-media"
+				allowfullscreen
+			></iframe>
+		</div>
+	</li>
+	<li>
+		Trắc nghiệm online: kiến thức phòng chống thiên tai
+		<div class="relative w-full pb-[96.25%] mt-4 ml-2">
+			<iframe
+				title=""
+				src="https://wayground.com/join?gc=62521530&source=liveDashboard"
+				class="absolute inset-0 w-full h-full rounded-xl"
+				allow="autoplay; encrypted-media"
+				allowfullscreen
+			></iframe>
+		</div>
+	</li>
+</ul>

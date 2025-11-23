@@ -30,6 +30,7 @@
 		border: 1px solid #dee2e6;
 		border-radius: 0 0 0.5rem 0.5rem;
 		border-top: 0;
+		background-color: #fff;
 	}
 	ul {
 		display: flex;

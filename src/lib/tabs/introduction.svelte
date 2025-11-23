@@ -1,5 +1,10 @@
 <script lang="ts">
-	const floodCauses = [
+	import Contents from '$lib/components/Contents.svelte';
+	import SectionTitle from '$lib/components/SectionTitle.svelte';
+	import SubContents from '$lib/components/SubContents.svelte';
+	import type { Content } from '$lib/models/content';
+
+	const floodCauses: Content[] = [
 		{
 			title: 'Tự nhiên',
 			contents: [
@@ -27,7 +32,7 @@
 		'Nước biển dâng: do bão mạnh, triều cường.'
 	];
 
-	const floodDamages = [
+	const floodDamages: Content[] = [
 		{
 			title: 'Thiệt hại về người',
 			contents: ['Tử vong, mất tích', 'Chấn thương do sạt lở, dòng nước xiết']
@@ -51,46 +56,24 @@
 	];
 </script>
 
-{#snippet contents(contents: string[])}
-	<ul class="list-disc pl-4">
-		{#each contents as content (content)}
-			<li>{content}</li>
-		{/each}
-	</ul>
-{/snippet}
-{#snippet subContents(subContents: { title: string; contents: string[] }[])}
-	<ol class="list-decimal pl-0 [&>li]:font-bold [&>li>ul>li]:font-normal">
-		{#each subContents as item (item.title)}
-			<li class="pt-1">
-				<h1 class="text-md font-bold pb-1">{item.title}</h1>
-				{@render contents(item.contents)}
-			</li>
-		{/each}
-	</ol>
-{/snippet}
-{#snippet sectionTitle(title: string)}
-	<h1 class="text-lg font-bold">{title}</h1>
-{/snippet}
-
 <ul class="list-[upper-alpha] marker:font-bold [&>li]:pb-2">
 	<li>
-		{@render sectionTitle('Lũ lụt là gì?')}
+		<SectionTitle title="Lũ lụt là gì?" />
 		Lũ lụt là hiện tượng nước từ sông, hồ, hoặc biển dâng cao bất thường, tràn ngập một vùng đất vốn
 		khô ráo và gây ngập úng. Đây là một loại thiên tai phổ biến xảy ra do mưa lớn kéo dài, bão, triều
 		cường, tuyết tan nhanh, hoặc vỡ đê, đập. Lũ lụt có thể gây thiệt hại nghiêm trọng về người và tài
 		sản
 	</li>
 	<li>
-		{@render sectionTitle('Nguyên nhân gây lũ lụt')}
-		{@render subContents(floodCauses)}
+		<SectionTitle title="Nguyên nhân gây lũ lụt" />
+		<SubContents subContents={floodCauses} />
 	</li>
 	<li>
-		{@render sectionTitle('Các loại lũ')}
-		<div class="pb-2"></div>
-		{@render contents(floodTypes)}
+		<SectionTitle title="Các loại lũ" />
+		<Contents contents={floodTypes} />
 	</li>
 	<li>
-		{@render sectionTitle('Tác hại của lũ lụt')}
-		{@render subContents(floodDamages)}
+		<SectionTitle title="Tác hại của lũ lụt" />
+		<SubContents subContents={floodDamages} />
 	</li>
 </ul>

@@ -1,34 +1,29 @@
-5.1. Cảnh báo khẩn cấp
+<script lang="ts">
+	import SubContents from '$lib/components/SubContents.svelte';
+	import type { Content } from '$lib/models/content';
 
-<br />
-Thông báo “Mức nước vượt báo động 2 tại …”
+	const warnings: Content[] = [
+		{
+			title: 'Cảnh báo khẩn cấp',
+			contents: [
+				'Thông báo “Mức nước vượt báo động 2"',
+				'Khuyến cáo sơ tán',
+				'Thông tin từ Trung tâm Dự báo Khí tượng'
+			]
+		},
+		{
+			title: 'Dự báo thời tiết',
+			contents: ['Lượng mưa 24h', 'Khu vực có nguy cơ lũ quét', 'Gió mạnh, bão, áp thấp nhiệt đới']
+		},
+		{
+			title: 'Gợi ý an toàn',
+			contents: [
+				'Tránh đi qua vùng ngập sâu',
+				'Tuyệt đối không bơi, lội qua nước chảy xiết',
+				'Chuẩn bị đèn pin, áo phao, đồ cứu hộ'
+			]
+		}
+	];
+</script>
 
-<br />
-Khuyến cáo sơ tán
-
-<br />
-Thông tin từ Trung tâm Dự báo Khí tượng
-
-<br />
-5.2. Dự báo thời tiết
-
-<br />
-Lượng mưa 24h
-
-<br />
-Khu vực có nguy cơ lũ quét
-
-<br />
-Gió mạnh, bão, áp thấp nhiệt đới
-
-<br />
-5.3. Gợi ý an toàn
-
-<br />
-Tránh đi qua vùng ngập sâu
-
-<br />
-Tuyệt đối không bơi, lội qua nước chảy xiết
-
-<br />
-Chuẩn bị đèn pin, áo phao, đồ cứu hộ
+<SubContents subContents={warnings} />
