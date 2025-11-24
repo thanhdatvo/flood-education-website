@@ -5,6 +5,7 @@ import Warning from '$lib/tabs/warning.svelte';
 import Guide from '$lib/tabs/guide.svelte';
 import Education from '$lib/tabs/education.svelte';
 import Media from '$lib/tabs/media.svelte';
+import Contact from '$lib/tabs/contact.svelte';
 
 export class TabItem {
 	constructor(
@@ -20,5 +21,6 @@ export const tabItems = [
 	new TabItem('warning', 'Cảnh báo - dự báo', Warning),
 	new TabItem('guide', 'Hướng dẫn ứng phó', Guide),
 	new TabItem('media', 'Góc truyền thông - giáo dục', Media),
-	new TabItem('education', 'Góc học tập', Education)
+	new TabItem('education', 'Góc học tập', Education),
+	new TabItem('contact', 'Liên hệ - hỗ trợ', Contact)
 ];
