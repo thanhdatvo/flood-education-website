@@ -1,6 +1,8 @@
 <script lang="ts">
 	import SubContents from '$lib/components/SubContents.svelte';
 	import type { Content } from '$lib/models/content';
+	import type { VideoContent } from '$lib/models/video_content';
+	import VideoContentC from '$lib/components/VideoContent.svelte';
 
 	const guides: Content[] = [
 		{
@@ -33,6 +35,12 @@
 			]
 		}
 	];
+	const content: VideoContent = {
+		title: '',
+		urls: ['https://www.youtube.com/embed/bdw81pYA8Ok']
+	};
 </script>
 
+<VideoContentC {content} />
+<div class="mt-6"></div>
 <SubContents subContents={guides} />
